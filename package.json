@@ -1,5 +1,5 @@
 {
-  "name": "package",
+  "name": "@malda/rich-text-editor",
   "version": "0.1.0",
   "description": "rich text editor for react",
   "main": "./dist/cjs/index.js",
@@ -12,7 +12,10 @@
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
-"prepublishOnly": "npm test && npm run prettier"
+"prepublishOnly": "npm test && npm run prettier",
+
+"clean": "rm -rf ./dist",
+"copy-files": "cp ./src/components/ ./dist/"
   },
   "author": "Malda Motuma",
   "license": "ISC",

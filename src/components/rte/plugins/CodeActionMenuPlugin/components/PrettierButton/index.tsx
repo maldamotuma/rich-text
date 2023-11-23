@@ -20,9 +20,13 @@ interface Props {
 }
 
 const PRETTIER_PARSER_MODULES = {
+  // @ts-ignore
   css: () => import('prettier/parser-postcss'),
+  // @ts-ignore
   html: () => import('prettier/parser-html'),
+  // @ts-ignore
   js: () => import('prettier/parser-babel'),
+  // @ts-ignore
   markdown: () => import('prettier/parser-markdown'),
 } as const
 
