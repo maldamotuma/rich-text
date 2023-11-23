@@ -1,21 +1,20 @@
 {
   "name": "@malda/rich-text-editor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "rich text editor for react",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs",
-"build:esm": "tsc",
-"build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
-"prepublishOnly": "npm test && npm run prettier",
-
-"clean": "rm -rf ./dist",
-"copy-files": "cp ./src/components/ ./dist/"
+    "prepublishOnly": "npm test && npm run prettier",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.css dist/cjs dist/esm"
   },
   "author": "Malda Motuma",
   "license": "ISC",
@@ -26,6 +25,7 @@
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
@@ -37,6 +37,7 @@
     "prettier": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^5.0.5",
     "ts-jest": "^29.1.1",
     "tslib": "^2.6.2",
     "typescript": "^5.3.2"
