@@ -1,0 +1,1 @@
+# rich-text-editor for react/next/gatsbyjs
